@@ -1,28 +1,59 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f4f4;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-header {
-  background: #4a90e2;
-  color: white;
-  text-align: center;
-  padding: 2em;
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 400px;
+    text-align: center;
 }
 
-section {
-  margin: 2em auto;
-  width: 80%;
-  background: white;
-  padding: 1.5em;
-  border-radius: 8px;
+h1 {
+    color: #0078aa;
+    margin-bottom: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background: #333;
-  color: white;
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0078aa;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #005f7f;
+}
+
+.hasil {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #eaf9f0;
+    border-radius: 10px;
 }
