@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Kolaborasi Kami</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Satuan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Selamat Datang di Website Kami</h1>
-    <p>Dibuat bersama oleh <strong>Santi</strong> dan <strong>Rekan</strong></p>
-  </header>
+    <div class="container">
+        <h1>🌡️ Website Konversi Satuan</h1>
+        <p>Pilih jenis konversi yang ingin dilakukan:</p>
 
-  <section class="about">
-    <h2>Tentang Kami</h2>
-    <p>Kami berdua sedang belajar membuat website sederhana dan berkolaborasi menggunakan GitHub.</p>
-  </section>
+        <form action="proses_konversi.php" method="POST">
+            <label for="jenis">Jenis Konversi:</label>
+            <select name="jenis" id="jenis" required>
+                <option value="">-- Pilih Jenis --</option>
+                <option value="suhu">Suhu (Celcius ↔ Fahrenheit ↔ Kelvin)</option>
+                <option value="panjang">Panjang (Meter ↔ Kilometer ↔ Centimeter)</option>
+                <option value="berat">Berat (Kilogram ↔ Gram ↔ Pon)</option>
+            </select>
 
-  <section class="contact">
-    <h2>Kontak</h2>
-    <ul>
-      <li>Email: santi@example.com</li>
-      <li>GitHub: <a href="https://github.com/santiela" target="_blank">github.com/santiela</a></li>
-    </ul>
-  </section>
+            <label for="nilai">Masukkan Nilai:</label>
+            <input type="number" step="any" name="nilai" id="nilai" placeholder="Masukkan angka..." required>
 
-  <footer>
-    <p>&copy; 2025 Santi & Rekan</p>
-  </footer>
+            <label for="dari">Dari Satuan:</label>
+            <input type="text" name="dari" placeholder="misal: Celcius / Meter / Kilogram" required>
 
-  <script src="script.js"></script>
+            <label for="ke">Ke Satuan:</label>
+            <input type="text" name="ke" placeholder="misal: Fahrenheit / Kilometer / Gram" required>
+
+            <button type="submit">Konversi</button>
+        </form>
+
+        <?php if (isset($_GET['hasil'])): ?>
+            <div class="hasil">
+                <h3>Hasil Konversi:</h3>
+                <p><?= htmlspecialchars($_GET['hasil']); ?></p>
+            </div>
+        <?php endif; ?>
+    </div>
 </body>
 </html>
